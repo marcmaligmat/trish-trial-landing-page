@@ -14,14 +14,18 @@ import App from "next/app";
 import Head from "next/head";
 import withRedux from "next-redux-wrapper";
 import { initStore } from "../store/reducers/cartReducer";
+import store from "../store";
 
 import GoTop from "../components/Shared/GoTop";
 import Loader from "../components/Shared/Loader";
 
-export default withRedux(initStore)(
+export default withRedux(
+  initStore,
+  store
+)(
   class MyApp extends App {
     render() {
-      const { Component, pageProps, store } = this.props;
+      const { Component, pageProps } = this.props;
 
       return (
         <>

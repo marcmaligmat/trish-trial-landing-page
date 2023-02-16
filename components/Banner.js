@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import FsLightbox from "fslightbox-react";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { actions } from "../store";
 
 const Banner = () => {
   const [toggler, setToggler] = useState(false);
+  const dispatch = useDispatch();
+  const handleOnClick = (e) => {
+    e.preventDefault();
+    dispatch(actions.toggleOverlay());
+  };
   return (
     <>
       <FsLightbox
@@ -40,9 +47,9 @@ const Banner = () => {
                 </div>
 
                 <div className="col-lg-4 col-md-12">
-                  <div className="signup-download ml-5">
+                  <div className="signup-download ml-5 pt-5">
                     <form>
-                      <div className="form-group">
+                      {/* <div className="form-group">
                         <label>Email</label>
                         <input
                           type="text"
@@ -67,10 +74,14 @@ const Banner = () => {
                           className="form-control"
                           placeholder="Confirm password"
                         />
-                      </div>
+                      </div> */}
 
-                      <button type="submit" className="btn btn-primary">
-                        Sign Up
+                      <button
+                        type="submit"
+                        onClick={handleOnClick}
+                        className="btn btn-primary"
+                      >
+                        Get Started
                       </button>
                       <div className="mt-5 text-center">
                         <h6>Get paid via</h6>
