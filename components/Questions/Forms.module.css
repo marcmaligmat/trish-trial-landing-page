@@ -1,0 +1,150 @@
+.formWrapper {
+  padding: 0;
+  box-sizing: border-box;
+
+  margin: auto;
+
+  padding-top: 10vh;
+  margin-left: 100px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.questionContainer {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  min-height: 100vh;
+  flex-direction: column;
+
+  width: 60%;
+  animation: fadeIn 4s ease-in-out;
+}
+
+.inputBox {
+  position: relative;
+  margin-top: 30px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background: var(--whiteColor);
+  border-radius: 5px;
+  font-size: 1.25em;
+  font-weight: bold;
+  animation: fadeIn 7s ease-in-out;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  font-size: 1.25em;
+  animation: fadeIn 7s ease-in-out;
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.8);
+  transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+  color: #000;
+  transform: translateX(10px) translateY(-21px);
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0 10px;
+
+  background: var(--templateColor);
+  border: 2px solid black;
+
+  border-radius: 5px;
+  letter-spacing: 0.15em;
+}
+.labelText {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.labelTextSmall {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.notice {
+  font-style: italic;
+  color: red;
+  animation: fadeIn 7s ease-in-out;
+}
+
+.nextBtn {
+  width: 20%;
+  margin-top: 40px;
+  transition: 0.2s;
+  animation: fadeIn 7s ease-in-out;
+  border: none;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  letter-spacing: 8px;
+  color: #ffff;
+  font-weight: bold;
+  background-color: var(--templateColor2);
+}
+
+.nextBtn:hover {
+  background-color: #546eeb;
+}
+
+.questionContainer input[type="radio"] {
+  display: none;
+}
+
+.questionContainer label {
+  width: 60%;
+  margin-top: 20px;
+  position: relative;
+  color: var(--black);
+  border-radius: 5px;
+  font-size: 20px;
+  border: 2px solid var(--blackColor);
+  padding: 10px 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.questionContainer label:before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  border: 3px solid var(--blackColor);
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.questionContainer input[type="radio"]:checked + label {
+  background-color: green;
+  color: white;
+}
+
+.questionContainer input[type="radio"]:checked + label:before {
+  height: 30px;
+  width: 30px;
+  border: 10px solid white;
+  background-color: var(--blackColor);
+}
+.noRadio:checked + label {
+  background-color: red !important;
+}

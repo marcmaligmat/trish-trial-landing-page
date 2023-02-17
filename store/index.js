@@ -4,14 +4,20 @@ const questionsSlice = createSlice({
   name: "questions",
   initialState: {
     showQuestionsOverlay: false,
-    pageNumber: 1,
+    questionNumber: 1,
     maxPage: 1,
+    questionProps: "",
   },
   reducers: {
     toggleOverlay(state, action) {
       state.showQuestionsOverlay = !state.showQuestionsOverlay;
     },
-    incrementPageNumber(state, action) {},
+    incrementPageNumber(state, action) {
+      state.questionNumber += 1;
+    },
+    resetQuestionNumber(state, action) {
+      state.questionNumber = 1;
+    },
   },
 });
 export const actions = questionsSlice.actions;
