@@ -1,9 +1,7 @@
 .formWrapper {
   padding: 0;
   box-sizing: border-box;
-
   margin: auto;
-
   padding-top: 10vh;
   margin-left: 100px;
   animation: fadeIn 2s ease-in-out;
@@ -123,6 +121,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-weight: 800;
 }
 
 .questionContainer label:before {
@@ -147,4 +146,36 @@
 }
 .noRadio:checked + label {
   background-color: red !important;
+}
+
+/* Max width (767px) */
+@media only screen and (max-width: 480px) {
+  .nextBtn {
+    width: 100%;
+  }
+  .questionContainer label {
+    width: 100%;
+    margin-top: 40px;
+    padding: 12px 20px;
+  }
+}
+/* Max width (767px) */
+@media only screen and (max-width: 767px) {
+  .overlay {
+  }
+  .questionContainer {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .formWrapper {
+    margin: 40px;
+  }
+}
+
+/* Max width (991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Max width (1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
 }
