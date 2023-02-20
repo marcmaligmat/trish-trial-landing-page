@@ -150,18 +150,11 @@
 
 /* Max width (767px) */
 @media only screen and (max-width: 480px) {
-  .nextBtn {
-    width: 100%;
-  }
-  .questionContainer label {
-    width: 100%;
-    margin-top: 40px;
-    padding: 12px 20px;
-  }
 }
 /* Max width (767px) */
 @media only screen and (max-width: 767px) {
-  .overlay {
+  .nextBtn {
+    width: 100%;
   }
   .questionContainer {
     width: 100%;
@@ -170,10 +163,22 @@
   .formWrapper {
     margin: 40px;
   }
+  .questionContainer label {
+    width: 100%;
+    margin-top: 40px;
+    padding: 12px 20px;
+  }
 }
 
 /* Max width (991px) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .questionContainer {
+    width: 90%;
+    margin-left: 0px;
+  }
+  .nextBtn {
+    width: 30%;
+  }
 }
 
 /* Max width (1199px) */
